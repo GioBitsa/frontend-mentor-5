@@ -1,0 +1,385 @@
+@import url('https://fonts.googleapis.com/css2?family=Spartan:wght@700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Spartan', sans-serif;
+}
+
+:root{
+
+
+    /* --- theme 1 --- */
+
+    /* backgrounds */
+
+    --Very-dark-desaturated-blue-main: hsl(222, 26%, 31%); /* main background */
+    --Very-dark-desaturated-blue-keypad: hsl(223, 31%, 20%); /* toggle background, keypad background */
+    --Very-dark-desaturated-blue-screen: hsl(224, 36%, 15%); /* screen background */
+
+    /* keys */
+
+    --Desaturated-dark-blue-key-background: hsl(225, 21%, 49%); /* key background */
+    --Desaturated-dark-blue-key-shadow: hsl(224, 28%, 35%); /* key shadow */
+
+    --Red: hsl(6, 63%, 50%); /* key background, toggle */
+    --Dark-red: hsl(6, 70%, 34%); /* key shadow */
+
+    --Light-grayish-orange: hsl(30, 25%, 89%); /* key background */
+    --Grayish-orange: hsl(28, 16%, 65%); /* key shadow */
+
+    /* text */
+
+    --Very-dark-grayish-blue: hsl(221, 14%, 31%);
+    --White-theme1: hsl(0, 0, 100%);
+
+
+    /* --- theme 2 --- */
+
+    /* backgrounds */
+
+    --Light-gray: hsl(0, 0%, 90%); /* main background */
+    --Grayish-red: hsl(0, 5%, 81%); /* toggle background, keypad background */
+    --Very-light-gray: hsl(0, 0%, 93%); /* screen background */
+
+    /* keys */
+
+    --Dark-moderate-cyan: hsl(185, 42%, 37%); /* key background */
+    --Very-dark-cyan: hsl(185, 58%, 25%); /* key shadow */
+
+    --Orange: hsl(25, 98%, 40%); /* key background, toggle */
+    --Dark-orange: hsl(25, 99%, 27%); /* key shadow */
+
+    --Light-grayish-yellow: hsl(45, 7%, 89%); /* key background */
+    --Dark-grayish-orange: hsl(35, 11%, 61%); /* key shadow */
+
+    /* text */
+
+    --Very-dark-grayish-yellow: hsl(60, 10%, 19%);
+    --White-theme2: hsl(0, 0, 100%); /* white */
+
+
+    
+    /* --- theme 3 --- */
+
+    /* backgrounds */
+
+    --Very-dark-violet-main: hsl(268, 75%, 9%); /* main background */
+    --Very-dark-violet-keypad: hsl(268, 71%, 12%); /* toggle background, keypad background */
+
+    /* keys */
+
+    --Dark-violet: hsl(281, 89%, 26%); /* key background */
+    --Vivid-magenta: hsl(285, 91%, 52%); /* key shadow */
+
+    --Pure-cyan: hsl(176, 100%, 44%); /* key background, toggle */
+    --Soft-cyan: hsl(177, 92%, 70%);
+
+    --Very-dark-violet: hsl(268, 47%, 21%); /* key background */
+    --Dark-magenta: hsl(290, 70%, 36%); /* key shadow */
+
+    /* text */
+
+    --Light-yellow: hsl(52, 100%, 62%);
+    --Very-dark-blue: hsl(198, 20%, 13%);
+    --White-theme3: hsl(0, 0, 100%); /* white */
+
+
+}
+
+/* constants */
+
+.theme1{
+    background-color: var(--Very-dark-desaturated-blue-main);
+}
+.theme2{
+    background-color: var(--Light-gray);
+}
+.theme3{
+    background-color: var(--Very-dark-violet);
+}
+
+/* end of contstants */
+
+body{
+    font-size: 32px;
+}
+
+.main{
+    width: 100%;
+    min-height: 100vh;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.content{
+    max-width: 700px;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 0;
+}
+
+.main.theme1 .header{
+    color: white;
+}
+.main.theme2 .header{
+    color: var(--Very-dark-grayish-yellow);
+}
+.main.theme3 .header{
+    color: var(--Light-yellow);
+}
+
+.right{
+    display: flex;
+    align-items: center;
+}
+
+.right span{
+    font-size: 13px;
+    margin-right: 20px;
+}
+
+.choose-theme{
+    width: 70px;
+    border-radius: 10px;
+    position: relative;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.main.theme1 .choose-theme{
+    background-color: var(--Very-dark-desaturated-blue-keypad);
+}
+.main.theme2 .choose-theme{
+    background-color: var(--Grayish-red);
+}
+.main.theme3 .choose-theme{
+    background-color: var(--Very-dark-violet-keypad);
+}
+
+.choose-theme span{
+    width: 15px;
+    height: 15px;
+    background-color: var(--Red);
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    border-radius: 50%;
+    transition: 0.3s ease;
+}
+
+.main.theme3 .choose-theme span{
+    background-color: var(--Pure-cyan);
+}
+
+.choose-theme span.slide1{
+    left: calc(25% - 5px);
+}
+.choose-theme span.slide2{
+    left: 50%;
+}
+.choose-theme span.slide3{
+    left: calc(100% - 12px);
+}
+
+.screen {
+    padding: 25px 0;
+    border-radius: 15px;
+}
+
+.main.theme1 .screen{
+    background-color: var(--Very-dark-desaturated-blue-screen);
+}
+
+.main.theme2 .screen{
+    background-color: var(--Very-light-gray);
+}
+.main.theme3 .screen{
+    background-color: var(--Very-dark-violet-keypad);
+}
+
+.screen .text{
+    padding: 0 20px;
+    min-height: 38px;
+    text-align: end;
+}
+
+.main.theme1 .screen .text{
+    color: white;
+}
+.main.theme2 .screen .text{
+    color: var(--Very-dark-grayish-yellow);
+}
+.main.theme3 .screen .text{
+    color: var(--Light-yellow);
+}
+
+.dial{
+    text-align: center;
+    margin-top: 30px;
+    border-radius: 15px;
+    padding-bottom: 25px;
+}
+
+.main.theme1 .dial{
+    background-color: var(--Very-dark-desaturated-blue-keypad);
+}
+
+.main.theme2 .dial{
+    background-color: var(--Grayish-red);
+}
+.main.theme3 .dial{
+    background-color: var(--Very-dark-violet-keypad);
+}
+
+.grid-items-content{
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    grid-gap: 25px;
+    padding: 25px;
+}
+
+.main.theme1 .grid-items-content{
+    color: var(--Very-dark-grayish-blue);
+}
+.main.theme2 .grid-items-content{
+    color: var(--Very-dark-grayish-yellow);
+}
+.main.theme3 .grid-items-content{
+    color: var(--Light-yellow);
+}
+
+.grid-item{
+    padding: 10px 40px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.main.theme1 .grid-item{
+    background-color: var(--Light-grayish-orange);
+    box-shadow: 0 5px 0px var(--Grayish-orange);
+}
+.main.theme2 .grid-item{
+    background-color: var(--Light-grayish-yellow);
+    box-shadow: 0 5px 0px var(--Dark-grayish-orange);
+}
+.main.theme3 .grid-item{
+    background-color: var(--Very-dark-violet);
+    box-shadow: 0 5px 0px var(--Dark-magenta);
+}
+
+.buttons-box{
+    display: flex;
+    padding: 0 25px;
+    color: white;
+}
+
+.btn{
+    width: 50%;
+    padding: 10px 0;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.main.theme1 .btn{
+    background-color: var(--Red);
+    box-shadow: 0 5px 0 var(--Dark-red);
+}
+.main.theme2 .btn{
+    background-color: var(--Orange);
+    box-shadow: 0 5px 0 var(--Dark-orange);
+}
+.main.theme3 .btn{
+    background-color: var(--Pure-cyan);
+    box-shadow: 0 5px 0 var(--Soft-cyan);
+    color: var(--Very-dark-blue);
+}
+
+.btn:nth-child(1){
+    margin-right: 12.5px;
+}
+.btn:nth-child(2){
+    margin-left: 12.5px;
+}
+
+
+.key{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 15px;
+    padding: 10px 0;
+}
+
+.main.theme1 .key{
+    background-color: var(--Desaturated-dark-blue-key-background);
+    box-shadow: 0 5px 0px var(--Desaturated-dark-blue-key-shadow);
+    color: white;
+}
+.main.theme2 .key{
+    background-color: var(--Dark-moderate-cyan);
+    box-shadow: 0 5px 0px var(--Very-dark-cyan);
+    color: white;
+}
+.main.theme3 .key{
+    background-color: var(--Dark-violet);
+    box-shadow: 0 5px 0px var(--Vivid-magenta);
+    color: white;
+}
+
+
+@media screen and (max-width: 700px){
+    .grid-items-content{
+        grid-column-gap: 20px;
+    }
+}
+@media screen and (max-width: 600px){
+    .content{
+        width: 100%;
+    }
+    .grid-item{
+        padding: 10px 20px;
+    }
+}
+@media screen and (max-width: 450px){
+    .grid-items-content{
+        padding: 25px 20px;
+    }
+    .buttons-box{
+        padding: 0 20px;
+    }
+    .btn:nth-child(1){
+        margin-right: 7px;
+    }
+    .btn:nth-child(2){
+        margin-left: 7px;
+    }
+}
+@media screen and (max-width: 450px){
+    .grid-items-content{
+        grid-column-gap: 10px;
+    }
+}
+@media screen and (max-width: 370px){
+    .grid-items-content{
+        padding: 25px 10px;
+    }
+    .buttons-box{
+        padding: 0 10px;
+    }
+}
+
+
+
+
+
+
+
+
